@@ -20,6 +20,4 @@ public interface CommunitySVC {
 
   int deleteById(Long comu_post_id);
 
-
-
 }

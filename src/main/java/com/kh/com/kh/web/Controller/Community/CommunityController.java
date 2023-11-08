@@ -93,7 +93,7 @@ public class CommunityController {
 
   //글 삭제
   @ResponseBody
-  @DeleteMapping("/{comu_post_id}")
+  @DeleteMapping("/gethering/{comu_post_id}")
   public ApiResponse<String> delete(@PathVariable("comu_post_id") Long comu_post_id){
     ApiResponse<String> result = null;
 

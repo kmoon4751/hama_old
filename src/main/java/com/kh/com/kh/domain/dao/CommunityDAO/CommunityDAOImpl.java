@@ -52,7 +52,7 @@ public class CommunityDAOImpl implements CommunityDAO {
   @Override
   public List<Community> questionAll() {
     StringBuffer sql = new StringBuffer();
-    sql.append("select title, content ");
+    sql.append("select comu_post_id,member_id, title, content, udate ");
     sql.append(" from community ");
     sql.append(" where comu_gubun = '궁금해요' ");
     sql.append(" order by udate desc ");
@@ -65,7 +65,7 @@ public class CommunityDAOImpl implements CommunityDAO {
   @Override
   public List<Community> howMuchAll() {
     StringBuffer sql = new StringBuffer();
-    sql.append("select title, content ");
+    sql.append("select comu_post_id,member_id, title, content, udate ");
     sql.append(" from community ");
     sql.append(" where comu_gubun = '얼마예요' ");
     sql.append(" order by udate desc ");
@@ -78,7 +78,7 @@ public class CommunityDAOImpl implements CommunityDAO {
   @Override
   public List<Community> getheringAll() {
     StringBuffer sql = new StringBuffer();
-    sql.append("select comu_post_id,member_id, title, content ");
+    sql.append("select comu_post_id,member_id, title, content, udate ");
     sql.append(" from community ");
     sql.append(" where comu_gubun = '모여봐요' ");
     sql.append(" order by udate desc ");
@@ -99,6 +99,7 @@ public class CommunityDAOImpl implements CommunityDAO {
     String sql = "delete from community where comu_post_id = :comu_post_id ";
 
     int deleteRowCnt = template.update(sql, Map.of("comu_post_id", comu_post_id));
+    log.info("delcnt={}",deleteRowCnt);
     return deleteRowCnt;
   }
 
