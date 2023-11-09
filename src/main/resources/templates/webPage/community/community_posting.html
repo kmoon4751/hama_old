@@ -10,7 +10,7 @@
   </th:block>
 
   <div layout:fragment="content">
-    <body>
+  <body>
     <div class="container_commu">
       <div class="containerWrap_commu">
         <!-- 사이드 메뉴 -->
@@ -56,17 +56,17 @@
             </div>
           </div>
     <div class="commu_content" id="content-container"  >
-    <form id="post_content" action method="post" style="background-color: blueviolet;">
+    <form id="post_content" action="/post" method="post" style="background-color: blueviolet;">
       <div>
-        <input type="text" id="post_content_title" name="post_content_title" >
+        <input type="text" id="post_content_title" name="title" placeholder="제목" >
       </div>
       <div>
-        <input type="text" id="post_content_content" name="post_content_content">
+        <input type="text" id="post_content_content" name="content" placeholder="본문을 입력해주세요">
       </div>
       <div>
         <input type="submit" value="등록">
       </div>
     </form>
-    </body>
+  </body>
     </div>
 </html>

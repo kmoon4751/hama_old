@@ -3,8 +3,10 @@ package com.kh.com.kh.web.Controller.Community;
 import com.kh.com.kh.domain.dao.entity.Community;
 import com.kh.com.kh.domain.svc.AedSVC.ApiResponse;
 import com.kh.com.kh.domain.svc.CommunitySVC.CommunitySVC;
+import com.kh.com.kh.web.form.communityForm.postForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,12 +30,28 @@ public class CommunityController {
 //  }
 
   //글 작성
-  @GetMapping("/posting")
-  public ModelAndView save(){
+  @GetMapping("/post")
+  public ModelAndView saveall(){
     ModelAndView mv = new ModelAndView();
     mv.setViewName("webPage/community/community_posting");
     return mv;
   }
+  //글 등록
+  @ResponseBody
+  @PostMapping("/post")
+  public ApiResponse<Long> save(
+      @ModelAttribute("postForm") postForm postForm){
+      log.info("postForm={}", postForm);
+    ApiResponse<Long> response = null;
+
+    Community community = new Community();
+    BeanUtils.copyProperties(postForm, community);
+
+    Long comu_post_id = communitySVC.save(community);
+     response = ApiResponse.createApiResponse("00","성공",comu_post_id);
+    return response;
+  }
+
 
   //궁금해요 초기화면
   @GetMapping("/question")

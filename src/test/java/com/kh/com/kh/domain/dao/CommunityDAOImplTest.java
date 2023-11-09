@@ -22,6 +22,7 @@ public class CommunityDAOImplTest {
   @DisplayName("글등록")
   void save(){
     Community community = new Community();
+
     community.setComu_post_id(5L);
     community.setComu_gubun("얼마예요");
     community.setTitle("울산에서 제일 싼 연어");
