@@ -27,6 +27,14 @@ public class CommunityController {
 //    return mv;
 //  }
 
+  //글 작성
+  @GetMapping("/posting")
+  public ModelAndView save(){
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("webPage/community/community_posting");
+    return mv;
+  }
+
   //궁금해요 초기화면
   @GetMapping("/question")
   public ModelAndView question(){
@@ -34,7 +42,6 @@ public class CommunityController {
       mv.setViewName("webPage/community/community_question");
       return mv;
   }
-
   //모든 게시글 조회
   @GetMapping("/question/all")
   @ResponseBody
@@ -92,17 +99,17 @@ public class CommunityController {
   }
 
   //글 삭제
-  @ResponseBody
-  @DeleteMapping("/gethering/{comu_post_id}")
-  public ApiResponse<String> delete(@PathVariable("comu_post_id") Long comu_post_id){
-    ApiResponse<String> result = null;
-
-    int row = communitySVC.deleteById(comu_post_id);
-    if(row == 1){
-      result = ApiResponse.createApiResponse("00", "성공", null);
-    }else {
-      result = ApiResponse.createApiResponse("01","실패", null);
-    }
-    return result;
-  }
+//  @ResponseBody
+//  @DeleteMapping("/gethering/{comu_post_id}")
+//  public ApiResponse<String> delete(@PathVariable("comu_post_id") Long comu_post_id){
+//    ApiResponse<String> result = null;
+//
+//    int row = communitySVC.deleteById(comu_post_id);
+//    if(row == 1){
+//      result = ApiResponse.createApiResponse("00", "성공", null);
+//    }else {
+//      result = ApiResponse.createApiResponse("01","실패", null);
+//    }
+//    return result;
+//  }
 }
