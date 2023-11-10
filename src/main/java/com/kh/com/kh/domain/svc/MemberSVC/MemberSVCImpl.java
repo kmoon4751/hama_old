@@ -29,5 +29,15 @@ public class MemberSVCImpl implements MemberSVC {
     return memberDAO.nickExist(nickname);
   }
 
+<<<<<<< HEAD
 
 }
+=======
+  @Override
+  public Long updateGubun(Long member_id, Long gubun) {
+    return memberDAO.updateGubun(member_id, gubun);
+  }
+
+}
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f

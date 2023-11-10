@@ -2,9 +2,16 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<<<<<<< HEAD
       layout:decorate="~{layouts/header}">
 <th:block layout:fragment="css">
   <link rel="stylesheet" th:href="@{/css/index/login.css}">
+=======
+      layout:decorate="~{layouts/only_footer}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 </th:block>
 
 <div layout:fragment="content">
@@ -20,12 +27,21 @@
 
       <!--로그인창 함께하마 타이틀-->
       <div class="form__row">
+<<<<<<< HEAD
         <img src="/img/logo.png" alt="">
+=======
+        <img src="/img/logo.png" alt=""
+             width="300px" height="150px">
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
       </div>
 
       <!--아이디 입력 박스-->
       <div class="form__row">
+<<<<<<< HEAD
         <i class="fa-solid fa-user "></i> <!--아이디 아이콘-->
+=======
+        <i class="fa-solid fa-user fa-bounce"></i> <!--아이디 아이콘-->
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 
         <!--아이디 입력-->
         <input  type="email"
@@ -38,7 +54,11 @@
 
       <!--비밀번호 입력 박스-->
       <div class="form__row">
+<<<<<<< HEAD
         <i class="fa-solid fa-key "></i> <!--아이콘-->
+=======
+        <i class="fa-solid fa-key fa-bounce"></i> <!--아이콘-->
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 
         <!--비밀번호 입력-->
         <input type="password"

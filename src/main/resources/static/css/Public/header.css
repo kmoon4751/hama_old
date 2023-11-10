@@ -3,6 +3,7 @@
     line-height: 20px;
 }
 @font-face {
+<<<<<<< HEAD
     font-family: 'GowunBatang-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
     font-weight: normal;
@@ -11,22 +12,51 @@
 *{
    /* outline: 1px solid red; */
    font-family: GowunBatang-Regular;
+=======
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+        }
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+   /* outline: 1px solid red; */
+   font-family: LINESeedKR-Bd;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
    font-weight: bold;
 }
 /* 헤더시작 */
 .header{
+<<<<<<< HEAD
    position: fixed;
    top: 0;
    left: 0;
    right: 0;
+=======
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
    display: grid;
    grid-area: header;
    grid-template-areas: ". header2 .";
    grid-template-columns: 1fr 1024px 1fr;
    background-color: #fff;
+<<<<<<< HEAD
    z-index: 1;
    border-bottom: 2px solid #f2f2f2;
    height : 90px;
+=======
+   top: 0;
+   position: sticky;
+   z-index: 1;
+   border-bottom: 2px solid #f2f2f2;
+   margin-top: 20px;
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 /* 헤더 요소들 (가운데) */
 .headers{
@@ -36,7 +66,11 @@
    grid-template-areas: "logo gnb . login";
    grid-template-columns: repeat(3,1fr);
    height:80px;
+<<<<<<< HEAD
    margin-top: 10px;
+=======
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 /* 로고 */
 .header .logo_loggo{
@@ -127,11 +161,15 @@ i.fa-solid.fa-user{
    position:relative; float:left; margin-right:10px; width: 50px;
 text-align: center; list-style: none;
 }
+<<<<<<< HEAD
 .header .login_signup .login2 > li > a > img {
     width:100%;
     height:100%;
     border-radius:50%;
 }
+=======
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .header .login_signup .login2 > li > a{
    display:block; padding:0; border: 1px solid gray; height: 50px;line-height:40px; color:#fff; border-radius: 50%; align-items: center;
 }

@@ -12,18 +12,30 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.RequestBody;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
 @Controller
+<<<<<<< HEAD
 @RequestMapping
+=======
+@RequestMapping("/give")
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 @RequiredArgsConstructor
 public class WorkGiveController {
 
   private final WorkGiveSVC workGiveSVC;
 
+<<<<<<< HEAD
   @GetMapping("/give")
+=======
+  @GetMapping
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
   public ModelAndView give(
       HttpServletRequest request
   ){
@@ -34,14 +46,21 @@ public class WorkGiveController {
     return mv;
   }
 
+<<<<<<< HEAD
   @GetMapping("/give/detail")
   public ModelAndView giveDetail(
     HttpServletRequest request,
     FetchForm fetchForm
+=======
+  @GetMapping("/detail")
+  public ModelAndView giveDetail(
+    HttpServletRequest request
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
   ){
     ModelAndView mv = new ModelAndView();
     HttpSession loginCheck = request.getSession(false);
     mv.addObject("loginCheck",loginCheck);
+<<<<<<< HEAD
     mv.addObject("fetchForm",fetchForm);
     mv.setViewName("webPage/workgive/workgive_detail2");
     return mv;
@@ -80,13 +99,27 @@ public class WorkGiveController {
       FetchForm fetchForm,
       HttpServletRequest request
   ){
+=======
+    mv.setViewName("webPage/workgive/workgive_detail");
+    return mv;
+  }
+
+  @PostMapping("/detail")
+  public ModelAndView giveDetailForm(
+      @RequestBody FetchForm fetchForm,
+      HttpServletRequest request
+      ){
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     ModelAndView mv = new ModelAndView();
     // 세션을 검색해서 Object로 변환 후 사용
     HttpSession session = request.getSession();
     Object useSession = session.getAttribute("sessionForm");
     SessionForm sessionForm = (SessionForm) useSession;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     GiveForm giveForm = new GiveForm();
     giveForm.setHope_date(fetchForm.getDate().replaceAll("[\\n\\s]",""));
     giveForm.setArea(fetchForm.getLocation());
@@ -97,10 +130,17 @@ public class WorkGiveController {
     log.info("GiveForm={}",giveForm);
     log.info("session={}",useSession);
 
+<<<<<<< HEAD
     Long insert = workGiveSVC.giveInsert(giveForm);
     log.info("insert={}",insert);
 
     mv.setViewName("redirect:/postRq");
+=======
+//    Long insert = workGiveSVC.giveInsert(giveForm);
+//    log.info("insert={}",insert);
+
+    mv.setViewName("webPage/workgive/wg_success");
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     return mv;
   }
 

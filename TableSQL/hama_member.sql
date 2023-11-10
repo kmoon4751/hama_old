@@ -8,6 +8,7 @@ drop sequence member_member_id_seq;
 --회원
 -------
 create table member (
+<<<<<<< HEAD
     member_id   number(10),         --내부 관리 아이디
     work_member_id   number(10),         --내부 관리 아이디
     email       varchar2(50),   --로긴 아이디
@@ -17,6 +18,16 @@ create table member (
     hobby       varchar2(300),  --취미
     gubun       varchar2(11)   default '주마', --회원구분 (일반,우수,관리자..)
     pic         number(10),            --사진
+=======
+    member_id   number,         --내부 관리 아이디
+    email       varchar2(50),   --로긴 아이디
+    passwd      varchar2(12),   --로긴 비밀번호
+    tel         varchar2(13),   --연락처 ex)010-1234-5678
+    nickname    varchar2(30),   --별칭
+    hobby       varchar2(300),  --취미
+    gubun       varchar2(11)   default '주마', --회원구분 (일반,우수,관리자..)
+    pic         blob,            --사진
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     cdate       timestamp default systimestamp,         --생성일시
     udate       timestamp default systimestamp          --수정일시
 );
@@ -32,15 +43,23 @@ alter table member add constraint member_gubun_ck check (gubun in ('주마','하
 create sequence member_member_id_seq;
 
 --샘플데이터 of member
+<<<<<<< HEAD
 insert into member (member_id,work_member_id,email,passwd,tel,nickname,hobby,gubun)
     values(member_member_id_seq.nextval,1, 'test1@kh.com', '1234', '010-1111-1111','테스터1','안녕하세요', '주마');
+=======
+insert into member (member_id,email,passwd,tel,nickname,hobby,gubun)
+    values(member_member_id_seq.nextval, 'test1@kh.com', '1234', '010-1111-1111','테스터1','안녕하세요', '주마');
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 insert into member (member_id,email,passwd,tel,nickname,hobby,gubun)
     values(member_member_id_seq.nextval, 'test2@kh.com', '1234', '010-1111-1112','테스터2','안녕하세요', '주마');
 insert into member (member_id,email,passwd,tel,nickname,hobby,gubun)
     values(member_member_id_seq.nextval, 'admin1@kh.com', '1234','010-1111-1113','관리자1', '안녕하세요','하마');
 insert into member (member_id,email,passwd,tel,nickname,hobby,gubun)
     values(member_member_id_seq.nextval, 'admin2@kh.com', '1234','010-1111-1114','관리자2', '안녕하세요','하마');
+<<<<<<< HEAD
 insert into member (member_id,work_member_id,email,passwd,tel,nickname,hobby,gubun)
     values(member_member_id_seq.nextval,1, 'test6@kh.com', '1234', '010-1111-1111','테스터3','안녕하세요', '주마');    
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 select * from member;
 commit;

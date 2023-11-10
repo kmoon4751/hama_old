@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<<<<<<< HEAD
 <th:block layout:fragment="css">
 
 </th:block>
+=======
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 <div th:fragment="header">
   <body>
   <div class="header">
@@ -19,16 +23,26 @@
         <ul class="menu">
           <!-- 일을주마 -->
           <li>
+<<<<<<< HEAD
             <a href="#" th:href="@{/give}">일을주마</a>
+=======
+            <a href="#">일을주마</a>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
             <ul class="depth_1">
               <li><a href="" th:href="@{/give}">견적요청</a></li>
             </ul>
           </li>
           <!-- 일을하마 -->
           <li>
+<<<<<<< HEAD
             <a href="#" th:href="@{/requestBoard}">일을하마</a>
             <ul class="depth_1">
               <li><a href="" th:href="@{/requestBoard}">요청게시판</a></li>
+=======
+            <a href="#">일을하마</a>
+            <ul class="depth_1">
+              <li><a href="#">요청게시판</a></li>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
             </ul>
           </li>
           <!-- 커뮤니티 -->
@@ -37,11 +51,19 @@
           </li>
           <!-- 하마찾기 -->
           <li>
+<<<<<<< HEAD
             <a href="#" th:href="@{/cus_center}">고객센터</a>
           </li>
         </ul>
       </div>
       <th:block th:if="${session.s_memberid == null}">
+=======
+            <a href="#">하마찾기</a>
+          </li>
+        </ul>
+      </div>
+      <th:block th:if="${loginCheck == null}">
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
       <div class="login_signup">
         <a class="login" th:href="@{/login}">로그인</a>
         <a class="login" th:href="@{/signup}">회원가입</a>
@@ -50,13 +72,23 @@
             <a href="#"><i class="fa-solid fa-user"></i></i></a>
             <ul class="depth_1">
               <li><p>회원관리</p></li>
+<<<<<<< HEAD
               <li><a href="#">프로필등록</a></li>
               <li><a href="#">회원정보수정</a></li>
+=======
+              <li><a href="#">하마신청</a></li>
+              <li><a href="#">프로필등록</a></li>
+              <li><a href="#">회원정보수정</a></li>
+              <li><a href="#">회원탈퇴</a></li>
+              <li><p>하마전용</p></li>
+              <li><a href="#">포트폴리오</a></li>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
             </ul>
           </li></div>
       </div>
       </th:block>
       <!-- 로그인,회원가입  -->
+<<<<<<< HEAD
       <th:block th:if="${session.s_memberid != null}">
       <div class="login_signup">
         <div></div>
@@ -75,6 +107,24 @@
               <li><a href="" th:href="@{/logout}">로그아웃</a></li>
               <li><p>하마전용</p></li>
               <li><a href="#">하마찾기등록</a></li>
+=======
+      <th:block th:if="${loginCheck != null}">
+      <div class="login_signup">
+        <div></div>
+        <div class="login">받은견적</div>
+        <div class="login">보낸요청</div>
+        <div class="login">채팅</div>
+        <div class="login2"style="cursor: pointer;">
+          <li>
+            <a href="#"><i class="fa-solid fa-user"></i></i></a>
+            <ul class="depth_1">
+              <li><p>회원관리</p></li>
+              <li><a href="#">하마신청</a></li>
+              <li><a href="#">회원정보수정</a></li>
+              <li><a href="" th:href="@{/logout}">로그아웃</a></li>
+              <li><p>하마전용</p></li>
+              <li><a href="#">포트폴리오</a></li>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
             </ul>
           </li></div>
 

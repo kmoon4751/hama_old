@@ -38,10 +38,16 @@ public class LoginController {
   // 1. RequestParam 으로 Post 매개변수를 redirectURL에 담음
   @PostMapping("login")
   public ModelAndView loginForm(
+<<<<<<< HEAD
 //      @RequestParam(value = "redirectUrl", required = false, defaultValue = "/") String redirectUrl,
       @Valid
       @ModelAttribute
       HttpSession session,
+=======
+      @RequestParam(value = "redirectUrl", required = false, defaultValue = "/") String redirectUrl,
+      @Valid
+      @ModelAttribute
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
       LoginForm loginForm,
       BindingResult bindingResult,
       HttpServletRequest request
@@ -71,6 +77,7 @@ public class LoginController {
     }
 
     HttpSession httpSession = request.getSession(true);
+<<<<<<< HEAD
     Long memberId = (Long) member.getMember_id();
     SessionForm sessionForm = new SessionForm(
         member.getMember_id(), member.getEmail(), member.getNickname(),member.getGubun(),
@@ -79,6 +86,13 @@ public class LoginController {
     httpSession.setAttribute("sessionForm",sessionForm);
     httpSession.setAttribute("s_memberid",member.getMember_id());
     mv.setViewName("redirect:/");
+=======
+    SessionForm sessionForm = new SessionForm(
+        member.getMember_id(), member.getEmail(), member.getNickname(),member.getGubun()
+    );
+    httpSession.setAttribute("sessionForm",sessionForm);
+    mv.setViewName("redirect:"+redirectUrl);
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     mv.addObject("loginForm",loginForm);
     return mv;
   }

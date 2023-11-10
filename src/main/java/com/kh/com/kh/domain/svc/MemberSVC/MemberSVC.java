@@ -11,4 +11,9 @@ public interface MemberSVC {
 
   Member insert(Member member);
 
+<<<<<<< HEAD
+=======
+  Long updateGubun(Long member_id, Long gubun);
+
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }

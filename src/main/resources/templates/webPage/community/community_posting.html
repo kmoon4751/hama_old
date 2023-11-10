@@ -31,10 +31,17 @@
           <!--        <a href="community_gethering.html">-->
           <div class="side side_gethering"><a th:href="@{/community/gethering}">모여봐요</a></div>
           <!--        </a>-->
+<<<<<<< HEAD
 <!--          <div class="side side_searching_wrap">-->
 <!--            <input class="side side_searching" id="search1" type="text" placeholder="검색어 입력..." name="search2"></input>-->
 <!--            <button class="side side_searching" id="search2">검색</button>-->
 <!--          </div>-->
+=======
+          <div class="side side_searching_wrap">
+            <input class="side side_searching" id="search1" type="text" placeholder="검색어 입력..." name="search2"></input>
+            <button class="side side_searching" id="search2">검색</button>
+          </div>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
           <script>
             // 검색 버튼 클릭 이벤트 처리
             document.getElementById('search2').addEventListener('click', function () {
@@ -57,11 +64,19 @@
           </div>
     <div class="commu_content" id="content-container" >
     <form action="" method="post" th:object="${postForm}">
+<<<<<<< HEAD
       <label for="comu_gubun">게시판을 선택해주세요 : </label>
       <select name="comu_gubun" id="comu_gubun">
         <option value="궁금해요">궁금해요</option>
         <option value="얼마예요">얼마예요</option>
         <option value="모여봐요">모여봐요</option>
+=======
+      <label for="comu_gubun">게시판 유형 선택 : </label>
+      <select name="comu_gubun" id="comu_gubun">
+        <option value="궁금해요">궁금</option>
+        <option value="얼마예요">얼마</option>
+        <option value="모여봐요">모여</option>
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
       </select>
       <div>
         <input type="text" id="post_title" name="title" placeholder="제목" >

@@ -14,14 +14,19 @@ let arr = ['청소/이사','레슨','디자인/개발','도우미','펫','기타
                   // console.log(arr[j],$bigCategory[j].children[i].children[1].textContent);
                   result = (arr[j]+ "  " +$bigCategory[j].children[i].children[1].textContent);
                   localStorage.setItem('category',result);
+<<<<<<< HEAD
                   //window.location.assign('http://localhost:7080/give/detail');
                   location.href = '/give/detail';
+=======
+                  window.location.assign('http://localhost:9080/give/detail');
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
                   i = 10;
                   break;
                   }
               }});
           };}
           sendData();
+<<<<<<< HEAD
 
 // HTML에서 라디오 버튼을 선택합니다.
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -45,3 +50,5 @@ radioButtons.forEach((radioButton, index) => {
         });
     });
 });
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f

@@ -1,17 +1,25 @@
 *{
     letter-spacing: 1px;
     line-height: 20px;
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;
     /* outline: 1px solid red; */
 }
 
+=======
+    /* outline: 1px solid red; */
+}
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .container_wg{
    display: grid;
    grid-template-areas: ". banner ."
                         ". main .";
    grid-template-columns: 1fr 1024px 1fr;
    margin-bottom: 100px;
+<<<<<<< HEAD
    margin-top: 100px;
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 .banner_wg{
     margin-top: 50px;
@@ -21,6 +29,7 @@
 }
 .main_wg{
     grid-area: main;
+<<<<<<< HEAD
 }
 #main_wgTitle {
     height: 100px;
@@ -36,6 +45,10 @@
     color: #0056b3;
 }
 
+=======
+    
+}
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .main_wg .item_box_top{
     display: flex;
     justify-content: space-around;
@@ -55,11 +68,15 @@
     align-items: center;
     width: 6rem;
     height: 6rem;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 .main_wg .item_box_top .item .pic img{
     width: 6rem;
     height: 6rem;
+<<<<<<< HEAD
     filter: grayscale(90%);
     transition: filter 0.2s;
 }
@@ -68,6 +85,9 @@
     transition: filter 0.2s;
 }
 
+=======
+}
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .main_wg .item_box_top .item .text{
     font-size: 0.875rem;
 }
@@ -75,7 +95,11 @@
 .main_wg .item_box_bottom{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+<<<<<<< HEAD
     row-gap: 40px;
+=======
+    row-gap: 20px;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     justify-items: center;
     box-sizing: border-box;
     display: none;
@@ -84,6 +108,7 @@
     width: 330px;
     height: 300px;
     border-radius: 16px;
+<<<<<<< HEAD
     border: .0625rem solid rgba(0,0,0,.125);
     overflow: hidden;
 }
@@ -94,6 +119,13 @@
 }
 
 
+=======
+    border: 1px solid red;
+    border: .0625rem solid rgba(0,0,0,.125);
+    overflow: hidden;
+    
+}
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .main_wg .item_box_bottom .item .box1 {
     width: 330px;
     height: 250px;
@@ -107,7 +139,10 @@
     height: 250px;
     cursor: pointer;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 .main_wg .item_box_bottom .item .box2 {
     font-weight: bold;
     height: 50px;

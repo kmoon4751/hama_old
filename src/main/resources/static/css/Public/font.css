@@ -1,5 +1,6 @@
 /*font css*/
 
+<<<<<<< HEAD
 @font-face {
     font-family: 'GowunBatang-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
@@ -11,28 +12,48 @@
 }
 body{
     font-family: GowunBatang-Regular;;
+=======
+body{
+    font-family: 'Roboto', sans-serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 
 /*서비스추천 하마찾기 커뮤니티 .... */
 h2{
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;;
+=======
+    font-family: 'Gowun Batang', serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 
 /*포장 이사 개인PT 수학과외 웹디자인 ....*/
 h4{
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;;
+=======
+    font-family: 'Gowun Batang', serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 
 /*gnb메뉴, 커뮤니티 카테고리 */
 .community__cate__desc,
 li,
 .login_signup .login{
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;;
+=======
+    font-family: 'Gowun Batang', serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 
 .main2 .container__main2 .section__main2 .information__main2 .item__main2 .box1__main2  .box1_head,
 .main2 .container__main2 .section__main2 .information__main2 .box3__main2{
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;;
+=======
+    font-family: 'Gowun Batang', serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
 }
 
 
@@ -43,6 +64,10 @@ li,
 .item__main3 .item__cate
     {
     font-size: small;
+<<<<<<< HEAD
     font-family: GowunBatang-Regular;;
+=======
+    font-family: 'Gowun Batang', serif;
+>>>>>>> 2788b44fb7e404135f4a8cde4c782e0557ecfe8f
     font-weight: bold;
     }
