@@ -5,11 +5,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -21,17 +20,24 @@ public class CommunityDAOImpl implements CommunityDAO {
 
   private final NamedParameterJdbcTemplate template;
 
-  //게시글 등록
+  //궁금해요 게시글 등록
   @Override
-  public Long save(Community community) {
+  public Long saveQuestion(Community community) {
     StringBuffer sql = new StringBuffer();
     sql.append("insert  into community(comu_post_id,comu_gubun,title,content,member_id,area) ");
-    sql.append(" values(community_comu_post_id_seq.nextval,:comu_gubun, :title, :content, :member_id, :area) ");
+    sql.append(" values(community_comu_post_id_seq.nextval,'궁금해요', :title, :content, :member_id, :area) ");
 
-    SqlParameterSource param = new BeanPropertySqlParameterSource(community);
-    Long insert = (long)template.update(sql.toString(),param);
+    Map<String,Object> param = new HashMap<>();
+    param.put("member_id", community.getMember_id());
+    param.put("area", community.getArea());
+    param.put("title", community.getTitle());
+    param.put("content", community.getContent());
 
-    return insert;
+    template.update(sql.toString(),param);
+
+    Long comu_post_id = template.queryForObject("SELECT community_comu_post_id_seq.currval FROM dual", param, Long.class);
+
+    return comu_post_id;
   }
 
 

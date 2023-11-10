@@ -7,16 +7,16 @@ import java.util.Optional;
 
 public interface CommunityDAO {
 
-  //게시글 등록
-  Long save(Community community);
+  //궁금해요 게시글 등록
+  Long saveQuestion(Community community);
 
   //궁금해요 게시글 목록
   List<Community> questionAll();
 
-  //궁금해요 게시글 목록
+  //얼마예요 게시글 목록
   List<Community> howMuchAll();
 
-  //궁금해요 게시글 목록
+  //모여봐요 게시글 목록
   List<Community> getheringAll();
 
   //게시글 수정

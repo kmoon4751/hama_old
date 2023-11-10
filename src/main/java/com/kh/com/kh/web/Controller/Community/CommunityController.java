@@ -3,11 +3,14 @@ package com.kh.com.kh.web.Controller.Community;
 import com.kh.com.kh.domain.dao.entity.Community;
 import com.kh.com.kh.domain.svc.AedSVC.ApiResponse;
 import com.kh.com.kh.domain.svc.CommunitySVC.CommunitySVC;
+import com.kh.com.kh.domain.svc.MemberSVC.MemberSVC;
 import com.kh.com.kh.web.form.communityForm.postForm;
+import com.kh.com.kh.web.form.memberForm.SessionForm;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,38 +23,44 @@ import java.util.List;
 public class CommunityController {
 
   private final CommunitySVC communitySVC;
+  private final MemberSVC memberSVC;
 
-  //초기화면 전체
-//  @GetMapping
-//  public ModelAndView community() {
-//    ModelAndView mv = new ModelAndView();
-//    mv.setViewName("webPage/community/community");
-//    return mv;
-//  }
-
-  //글 작성
-  @GetMapping("/post")
-  public ModelAndView saveall(){
-    ModelAndView mv = new ModelAndView();
-    mv.setViewName("webPage/community/community_posting");
-    return mv;
+  //궁금해요 글 등록 양식
+  @GetMapping("/question/post")
+  public String questionSave(Model model){
+    log.info("postForm 호출");
+    model.addAttribute("postForm", new postForm());
+    return "webPage/community/community_posting";
   }
-  //글 등록
-  @ResponseBody
-  @PostMapping("/post")
-  public ApiResponse<Long> save(
-      @ModelAttribute("postForm") postForm postForm){
-      log.info("postForm={}", postForm);
-    ApiResponse<Long> response = null;
+
+  //궁금해요 글 등록
+  @PostMapping("/question/post")
+  public ModelAndView questionPost(
+      postForm postForm,
+      HttpSession session
+      ){
+    ModelAndView mv = new ModelAndView();
+
+    log.info("postForm 호출={}", postForm);
+
+    SessionForm sessionForm = (SessionForm) session.getAttribute("sessionForm");
+
 
     Community community = new Community();
-    BeanUtils.copyProperties(postForm, community);
+    community.setTitle(postForm.getTitle());
+    community.setContent(postForm.getContent());
+//    community.setMember_id(sessionForm.getMember_id());
 
-    Long comu_post_id = communitySVC.save(community);
-     response = ApiResponse.createApiResponse("00","성공",comu_post_id);
-    return response;
+
+    session.setAttribute("sessionForm", sessionForm);
+
+    Long comu_post_id = communitySVC.saveQuestion(community);
+
+    log.info("id={}", community.getComu_post_id());
+    log.info("title={}", postForm.getTitle());
+    mv.setViewName("webPage/community/community_question");
+    return mv;
   }
-
 
   //궁금해요 초기화면
   @GetMapping("/question")
@@ -74,7 +83,6 @@ public class CommunityController {
     return result;
   }
 
-
   //얼마예요 초기화면
   @GetMapping("/howmuch")
   public ModelAndView howMuch(){
@@ -94,7 +102,6 @@ public class CommunityController {
     }
     return result;
   }
-
 
   //모여봐요 초기화면
   @GetMapping("/gethering")

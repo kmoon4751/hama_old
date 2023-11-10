@@ -55,13 +55,13 @@
               </div>
             </div>
           </div>
-    <div class="commu_content" id="content-container"  >
-    <form id="post_content" action="/post" method="post" style="background-color: blueviolet;">
+    <div class="commu_content" id="content-container" >
+    <form action="" method="post" th:object="${postForm}">
       <div>
-        <input type="text" id="post_content_title" name="title" placeholder="제목" >
+        <input type="text" id="post_title" name="title" placeholder="제목" >
       </div>
       <div>
-        <input type="text" id="post_content_content" name="content" placeholder="본문을 입력해주세요">
+        <input type="text" id="post_content" name="content" placeholder="본문을 입력해주세요">
       </div>
       <div>
         <input type="submit" value="등록">

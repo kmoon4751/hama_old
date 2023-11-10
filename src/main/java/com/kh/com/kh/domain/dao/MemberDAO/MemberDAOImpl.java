@@ -69,4 +69,18 @@ public class MemberDAOImpl implements MemberDAO {
 
     return cnt == 1 ? true : false ;
   }
+
+  @Override
+  public Long updateGubun(Long member_id, Long gubun) {
+    StringBuffer sql = new StringBuffer();
+    sql.append("update member ");
+    sql.append("set gubun = 1 ");
+    sql.append("where member_id = :member_id");
+
+    Map<String, Object> param = Map.of("member_id", member_id, "gubun", gubun);
+
+    Long cnt = (long) template.update(sql.toString(), param);
+
+    return cnt;
+  }
 }
