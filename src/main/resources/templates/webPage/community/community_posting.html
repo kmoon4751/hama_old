@@ -16,9 +16,9 @@
         <!-- 사이드 메뉴 -->
         <div class="commu_side">
 
-          <a href="test.html">
-            <div class="side side_write"> 글작성 </div>
-          </a>
+<!--          <a href="test.html">-->
+<!--            <div class="side side_write"> 글작성 </div>-->
+<!--          </a>-->
           <!--        <a href="community.html">-->
           <!--                <div class="side side_whole"><i class="fa-solid fa-location-arrow"></i><a href="/community">전체</a></div>-->
           <!--        </a>-->
@@ -57,6 +57,12 @@
           </div>
     <div class="commu_content" id="content-container" >
     <form action="" method="post" th:object="${postForm}">
+      <label for="comu_gubun">게시판 유형 선택 : </label>
+      <select name="comu_gubun" id="comu_gubun">
+        <option value="궁금해요">궁금</option>
+        <option value="얼마예요">얼마</option>
+        <option value="모여봐요">모여</option>
+      </select>
       <div>
         <input type="text" id="post_title" name="title" placeholder="제목" >
       </div>

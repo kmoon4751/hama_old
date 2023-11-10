@@ -16,8 +16,8 @@ public class CommunitySVCImpl implements CommunitySVC {
   private final CommunityDAO communityDAO;
 
   @Override
-  public Long saveQuestion(Community community) {
-    return communityDAO.saveQuestion(community);
+  public Long savePost(Community community) {
+    return communityDAO.savePost(community);
   }
 
   @Override

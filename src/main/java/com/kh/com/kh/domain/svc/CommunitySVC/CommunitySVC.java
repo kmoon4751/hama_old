@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface CommunitySVC {
 
-  //궁금해요 게시글 등록
-  Long saveQuestion(Community community);
+  //게시글 등록
+  Long savePost(Community community);
 
   //궁금해요 게시글 목록
   List<Community> questionAll();

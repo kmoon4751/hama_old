@@ -49,12 +49,13 @@ public class CommunityController {
     Community community = new Community();
     community.setTitle(postForm.getTitle());
     community.setContent(postForm.getContent());
+    community.setComu_gubun(postForm.getComu_gubun());
 //    community.setMember_id(sessionForm.getMember_id());
 
 
     session.setAttribute("sessionForm", sessionForm);
 
-    Long comu_post_id = communitySVC.saveQuestion(community);
+    Long comu_post_id = communitySVC.savePost(community);
 
     log.info("id={}", community.getComu_post_id());
     log.info("title={}", postForm.getTitle());

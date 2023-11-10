@@ -22,14 +22,15 @@ public class CommunityDAOImpl implements CommunityDAO {
 
   //궁금해요 게시글 등록
   @Override
-  public Long saveQuestion(Community community) {
+  public Long savePost(Community community) {
     StringBuffer sql = new StringBuffer();
     sql.append("insert  into community(comu_post_id,comu_gubun,title,content,member_id,area) ");
-    sql.append(" values(community_comu_post_id_seq.nextval,'궁금해요', :title, :content, :member_id, :area) ");
+    sql.append(" values(community_comu_post_id_seq.nextval,:comu_gubun, :title, :content, :member_id, :area) ");
 
     Map<String,Object> param = new HashMap<>();
     param.put("member_id", community.getMember_id());
     param.put("area", community.getArea());
+    param.put("comu_gubun", community.getComu_gubun());
     param.put("title", community.getTitle());
     param.put("content", community.getContent());
 

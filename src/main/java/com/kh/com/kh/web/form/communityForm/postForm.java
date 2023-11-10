@@ -12,4 +12,6 @@ public class postForm {
 
   @NotBlank(message = "본문을 입력해주세요")
   private String content;
+
+  private String comu_gubun;
 }
