@@ -26,7 +26,7 @@ public class CommunityController {
   private final MemberSVC memberSVC;
 
   //궁금해요 글 등록 양식
-  @GetMapping("/question/post")
+  @GetMapping("/add/post")
   public String questionSave(Model model){
     log.info("postForm 호출");
     model.addAttribute("postForm", new postForm());
@@ -34,7 +34,7 @@ public class CommunityController {
   }
 
   //궁금해요 글 등록
-  @PostMapping("/question/post")
+  @PostMapping("/add/post")
   public ModelAndView questionPost(
       postForm postForm,
       HttpSession session
@@ -59,7 +59,14 @@ public class CommunityController {
 
     log.info("id={}", community.getComu_post_id());
     log.info("title={}", postForm.getTitle());
-    mv.setViewName("webPage/community/community_question");
+
+    if( "궁금해요".equals(postForm.getComu_gubun()) ){
+      mv.setViewName("webPage/community/community_question");
+    }else if( "얼마예요".equals(postForm.getComu_gubun()) ){
+      mv.setViewName("webPage/community/community_howMuch");
+    }else{
+      mv.setViewName("webPage/community/community_gethering");
+    };
     return mv;
   }
 
